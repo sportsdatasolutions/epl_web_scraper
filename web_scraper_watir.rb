@@ -10,7 +10,7 @@ include Helpers
 goals = []
 
 # Create Watir Browser Object to interact with Chrome. Headless means the browser won't physically open up on the screen.
-browser = Watir::Browser.new :chrome, headless: false
+browser = Watir::Browser.new :chrome, headless: true
 
 # Set Web Page URL
 url = "https://www.premierleague.com/stats/top/players/goals?se=210"
