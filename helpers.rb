@@ -22,7 +22,7 @@ module Helpers
   end
 
   def scraped_player(row)
-    row.css('td')[1].css('a').css('strong').text
+    row.css('td')[1].css('a').css('strong').text.strip
   end
 
   def scraped_club(row)
