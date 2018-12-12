@@ -1,8 +1,6 @@
 module Helpers
-  def scrape_table_data(web_page, goals)
-    data_table = web_page.at('tbody.statsTableContainer')
-
-    data_table.css('tr').each do |row|
+  def scrape_table_data(html, goals)
+    data_table_body(html).css('tr').each do |row|
       goals.push ({
         rank: scraped_rank(row),
         player: scraped_player(row),
@@ -14,6 +12,10 @@ module Helpers
   end
 
   private
+
+  def data_table_body(html)
+    Nokogiri::HTML(html).at('tbody.statsTableContainer')
+  end
 
   def scraped_rank(row)
     row.css('td')[0].css('strong').text.tr('.', '').to_i
