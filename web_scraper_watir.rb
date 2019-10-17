@@ -15,6 +15,8 @@ browser = Watir::Browser.new :chrome, headless: true
 # Set Web Page URL
 url = "https://www.premierleague.com/stats/top/players/goals?se=210"
 
+puts "Start"
+
 # Start loading Web Page
 browser.goto(url)
 
@@ -29,7 +31,10 @@ until browser.div(class: ["paginationBtn", "paginationNextContainer", "inactive"
   browser.div(class: ["paginationBtn", "paginationNextContainer"]).fire_event :click
   sleep 2
   scrape_table_data(browser.html, goals)
+  puts "Next Page"
 end
 
+puts "Done"
+
 # Save Goals Array into JSON file.
-File.write('goals_2018_2019.json', goals.to_json)
+File.write("data/goals_all_2018_2019.json", goals.to_json)
