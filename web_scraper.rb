@@ -1,28 +1,11 @@
-require 'open-uri'
 require 'json'
-require 'nokogiri'
-require 'watir'
-require_relative 'helpers.rb'
+require 'open-uri'
 
-include Helpers
+# Set API URL
+url = "https://footballapi.pulselive.com/football/stats/ranked/players/goals?page=0&pageSize=20&compSeasons=210&comps=1&compCodeForActivePlayer=EN_PR&altIds=true"
 
-# Goals Array
-goals = []
-
-# Create Watir Browser Object to interact with Chrome. Headless means the browser won't physically open up on the screen.
-browser = Watir::Browser.new :chrome, headless: true
-
-# Set Web Page URL
-url = "https://www.premierleague.com/stats/top/players/goals?se=210"
-
-# Start loading Web Page
-browser.goto(url)
-
-# Wait for current season stats to load
-sleep 5
-
-# Perform HTML Scrape
-scrape_table_data(browser.html, goals)
+# Assign API response to 'goals'
+goals = JSON.parse(open(url).read)
 
 # Save Goals Array into JSON file.
-File.write('goals_2018_2019.json', goals.to_json)
+File.write('goals_2018_2019.json', JSON.dump(goals))
