@@ -7,5 +7,7 @@ url = "https://footballapi.pulselive.com/football/stats/ranked/players/goals?pag
 # Assign API response to 'goals'
 goals = JSON.parse(open(url).read)
 
+puts "Done"
+
 # Save Goals Array into JSON file.
 File.write('goals_2018_2019.json', JSON.dump(goals))

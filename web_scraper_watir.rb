@@ -1,4 +1,3 @@
-require 'open-uri'
 require 'json'
 require 'nokogiri'
 require 'watir'
@@ -29,7 +28,10 @@ until browser.div(class: ["paginationBtn", "paginationNextContainer", "inactive"
   browser.div(class: ["paginationBtn", "paginationNextContainer"]).fire_event :click
   sleep 2
   scrape_table_data(browser.html, goals)
+  puts "Next Page"
 end
+
+puts "Done"
 
 # Save Goals Array into JSON file.
 File.write('goals_2018_2019.json', goals.to_json)
