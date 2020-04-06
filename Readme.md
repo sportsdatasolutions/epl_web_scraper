@@ -25,13 +25,13 @@ First, ```bundle install``` to install gem dependencies. Consult Google on any b
 $ bundle install
 ```
 
-There are two web scrapers: ```web_scraper.rb``` and ```web_scraper_watir.rb```. Both can be run via Ruby runtime. E.g.
+There web scrraping script can be found in ```web_scraper_watir.rb```. It can be run via Ruby runtime. E.g.
 
 ```
-$ ruby web_scraper.rb
+$ ruby web_scraper_watir.rb
 ```
 
-Once the scraper runs, you should see the relevant data appear in a new ```.json``` file. The ```watir``` scraper has an extra bit of code that clicks the pagination(next) button to scrape all the goal scores instead of just the players on the first page.
+Once the scraper runs, you should see the relevant data appear in a new ```.json``` file. The ```watir``` scraper has an extra bit of code that clicks the pagination(next) button to scrape all the goal scores.
 
 ### Contributing
 
