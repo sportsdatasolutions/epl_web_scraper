@@ -1,4 +1,2 @@
-# Ignoring the data folder, and everything in it.
-data/*
 # Ignoring Gemfile.lock because other versions may be required for different systems.
 Gemfile.lock
