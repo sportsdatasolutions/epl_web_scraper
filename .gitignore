@@ -1,2 +1,5 @@
 # Ignoring Gemfile.lock because other versions may be required for different systems.
 Gemfile.lock
+
+# Ignoring data file.
+goals_2018_2019.json
