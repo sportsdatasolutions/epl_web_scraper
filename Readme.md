@@ -6,9 +6,16 @@
 
 ### Prerequisites
 
-***You need to have the [Chrome Browser](https://www.google.com/chrome/) installed.***
++ ***You need to have the [Chrome Browser](https://www.google.com/chrome/) installed.***
 
-***You'll also need Ruby and Bundler installed. Recommended versions below.***
++ ***You need to have a driver installed for Chrome. Steps to install for MacOS below. WSL steps coming soon.***
+
+```bash
+# MacOS
+$ brew tap homebrew/cask && brew cask install chromedriver
+```
+
++ ***You'll also need Ruby and Bundler installed. Recommended versions below.***
 
 ```
 $ ruby -v
